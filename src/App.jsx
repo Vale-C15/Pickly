@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-import Navbar from "./components/Navbar"
+import Navbar from "./components/Navbar/Navbar"
 
-import Home from "./pages/Home"
-import AddActivity from "./pages/AddActivity"
-import Roulette from "./pages/Roulette"
+import Home from "./pages/Home/Home"
+import AddActivity from "./pages/AddActivity/AddActivity"
+import Roulette from "./pages/Roulette/Roulette"
 
 export default function App() {
   return (
     <BrowserRouter>
-      <main className="min-h-screen bg-[#f7f4ee]">
+      <main className="app-container">
         <Navbar />
 
         <Routes>

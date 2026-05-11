@@ -1,0 +1,21 @@
+@reference "../../index.css";
+
+.navbar {
+  @apply flex items-center justify-between px-6 py-4 border-b border-[#ece7de] bg-white;
+}
+
+.navbar-logo {
+  @apply text-2xl font-bold;
+}
+
+.navbar-links {
+  @apply flex gap-4;
+}
+
+.navbar-link {
+  @apply text-gray-500 transition;
+}
+
+.navbar-link-active {
+  @apply text-black font-semibold;
+}

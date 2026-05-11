@@ -1,22 +1,23 @@
 import { Link, useLocation } from "react-router-dom"
+import "./Navbar.css"
 
 export default function Navbar() {
   const location = useLocation()
 
   const linkStyle = (path) =>
     location.pathname === path
-      ? "text-black font-semibold"
-      : "text-gray-500"
+      ? "navbar-link navbar-link-active"
+      : "navbar-link"
 
   return (
-    <nav className="flex items-center justify-between px-6 py-4 border-b border-gray-200 bg-white">
+    <nav className="navbar">
       <Link to="/">
-        <h1 className="text-2xl font-bold">
+        <h1 className="navbar-logo">
           Pickly
         </h1>
       </Link>
 
-      <div className="flex gap-4">
+      <div className="navbar-links">
         <Link className={linkStyle("/")} to="/">
           Inicio
         </Link>

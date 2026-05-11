@@ -1,0 +1,45 @@
+@reference "../../index.css";
+
+.home-page {
+  @apply max-w-5xl mx-auto p-6;
+}
+
+.home-title {
+  @apply text-4xl font-bold;
+}
+
+.home-subtitle {
+  @apply text-gray-600 mt-2;
+}
+
+.activities-list {
+  @apply mt-8 grid gap-4;
+}
+
+.empty-state {
+  @apply p-8 rounded-3xl text-center;
+}
+
+.empty-text {
+  @apply text-gray-500;
+}
+
+.activity-card {
+  @apply p-5;
+}
+
+.activity-header {
+  @apply flex items-center justify-between;
+}
+
+.activity-title {
+  @apply text-xl font-semibold;
+}
+
+.activity-duration {
+  @apply text-sm text-gray-500;
+}
+
+.activity-category {
+  @apply mt-2 text-gray-600;
+}

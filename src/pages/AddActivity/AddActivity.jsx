@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { categories, durations } from "../data/options"
+import { categories, durations } from "../../data/options"
+import "./AddActivity.css"
 
 export default function AddActivity() {
   const [title, setTitle] = useState("")
@@ -31,17 +32,17 @@ export default function AddActivity() {
   }
 
   return (
-    <div className="max-w-xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">
+    <div className="add-page">
+      <h1 className="add-title">
         Nueva actividad
       </h1>
 
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-6 rounded-3xl border border-[#ece7de] space-y-5"
+        className="card add-form"
       >
-        <div>
-          <label className="block mb-2 font-medium">
+        <div className="form-group">
+          <label className="form-label">
             Nombre
           </label>
 
@@ -50,20 +51,20 @@ export default function AddActivity() {
             placeholder="Ej: Dibujar, estudiar React..."
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full p-3 rounded-xl border border-gray-300 outline-none"
+            className="input-field"
             required
           />
         </div>
 
-        <div>
-          <label className="block mb-2 font-medium">
+        <div className="form-group">
+          <label className="form-label">
             Categoría
           </label>
 
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="w-full p-3 rounded-xl border border-gray-300"
+            className="select-field"
           >
             {categories.map((item) => (
               <option key={item}>
@@ -73,15 +74,15 @@ export default function AddActivity() {
           </select>
         </div>
 
-        <div>
-          <label className="block mb-2 font-medium">
+        <div className="form-group">
+          <label className="form-label">
             Tiempo estimado
           </label>
 
           <select
             value={duration}
             onChange={(e) => setDuration(e.target.value)}
-            className="w-full p-3 rounded-xl border border-gray-300"
+            className="select-field"
           >
             {durations.map((item) => (
               <option key={item}>
@@ -91,9 +92,7 @@ export default function AddActivity() {
           </select>
         </div>
 
-        <button
-          className="w-full bg-[#2f5249] text-white py-3 rounded-xl hover:opacity-90 transition"
-        >
+        <button className="primary-button">
           Guardar actividad
         </button>
       </form>

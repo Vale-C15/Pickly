@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import "./Home.css"
 
 export default function Home() {
   const [activities, setActivities] = useState([])
@@ -11,19 +12,19 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="max-w-5xl mx-auto p-6">
-      <h1 className="text-4xl font-bold">
+    <div className="home-page">
+      <h1 className="home-title">
         Pickly
       </h1>
 
-      <p className="text-gray-600 mt-2">
+      <p className="home-subtitle">
         Encuentra algo para hacer según tu tiempo.
       </p>
 
-      <div className="mt-8 grid gap-4">
+      <div className="activities-list">
         {activities.length === 0 ? (
-          <div className="bg-white p-8 rounded-2xl text-center">
-            <p className="text-gray-500">
+          <div className="card empty-state">
+            <p className="empty-text">
               No hay actividades todavía ✨
             </p>
           </div>
@@ -31,19 +32,19 @@ export default function Home() {
           activities.map((activity) => (
             <div
               key={activity.id}
-              className="bg-white p-5 rounded-3xl border border-[#ece7de]"
+              className="card activity-card"
             >
-              <div className="flex items-center justify-between">
-                <h2 className="text-xl font-semibold">
+              <div className="activity-header">
+                <h2 className="activity-title">
                   {activity.title}
                 </h2>
 
-                <span className="text-sm text-gray-500">
+                <span className="activity-duration">
                   {activity.duration}
                 </span>
               </div>
 
-              <p className="mt-2 text-gray-600">
+              <p className="activity-category">
                 {activity.category}
               </p>
             </div>
