@@ -9,7 +9,7 @@ import Roulette from "./pages/Roulette"
 export default function App() {
   return (
     <BrowserRouter>
-      <main className="min-h-screen">
+      <main className="min-h-screen bg-[#f7f4ee]">
         <Navbar />
 
         <Routes>

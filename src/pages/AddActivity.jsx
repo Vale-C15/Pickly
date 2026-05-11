@@ -38,7 +38,7 @@ export default function AddActivity() {
 
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-6 rounded-2xl shadow-sm space-y-4"
+        className="bg-white p-6 rounded-3xl border border-[#ece7de] space-y-5"
       >
         <div>
           <label className="block mb-2 font-medium">
@@ -92,7 +92,7 @@ export default function AddActivity() {
         </div>
 
         <button
-          className="w-full bg-black text-white py-3 rounded-xl hover:opacity-90 transition"
+          className="w-full bg-[#2f5249] text-white py-3 rounded-xl hover:opacity-90 transition"
         >
           Guardar actividad
         </button>

@@ -31,7 +31,7 @@ export default function Home() {
           activities.map((activity) => (
             <div
               key={activity.id}
-              className="bg-white p-5 rounded-2xl shadow-sm"
+              className="bg-white p-5 rounded-3xl border border-[#ece7de]"
             >
               <div className="flex items-center justify-between">
                 <h2 className="text-xl font-semibold">
