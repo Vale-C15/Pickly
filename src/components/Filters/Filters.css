@@ -1,0 +1,5 @@
+@reference "../../index.css";
+
+.filters-container {
+  @apply flex flex-col md:flex-row gap-4 mt-8;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 import ActivityCard from "../../components/ActivityCard/ActivityCard"
+import Filters from "../../components/Filters/Filters"
 
 import {
   getActivities,
@@ -12,6 +13,8 @@ import "./Home.css"
 
 export default function Home() {
   const [activities, setActivities] = useState([])
+  const [selectedCategory, setSelectedCategory] = useState("")
+  const [selectedDuration, setSelectedDuration] = useState("")
 
   const loadActivities = () => {
     setActivities(getActivities())
@@ -30,6 +33,20 @@ export default function Home() {
     toggleActivityStatus(id)
     loadActivities()
   }
+  
+  const filteredActivities = activities.filter(
+    (activity) => {
+      const matchesCategory =
+        selectedCategory === "" ||
+        activity.category === selectedCategory
+
+      const matchesDuration =
+        selectedDuration === "" ||
+        activity.duration === selectedDuration
+
+      return matchesCategory && matchesDuration
+    }
+  )
 
   return (
     <div className="home-page">
@@ -41,15 +58,22 @@ export default function Home() {
         Encuentra algo para hacer según tu tiempo.
       </p>
 
+      <Filters
+        selectedCategory={selectedCategory}
+        selectedDuration={selectedDuration}
+        onCategoryChange={setSelectedCategory}
+        onDurationChange={setSelectedDuration}
+      />
+
       <div className="activities-list">
-        {activities.length === 0 ? (
+        {filteredActivities.length === 0 ? (
           <div className="card empty-state">
             <p className="empty-text">
-              No hay actividades todavía ✨
+              No hay actividades con esos filtros ✨
             </p>
           </div>
         ) : (
-          activities.map((activity) => (
+          filteredActivities.map((activity) => (
             <ActivityCard
               key={activity.id}
               activity={activity}
