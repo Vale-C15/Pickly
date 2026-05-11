@@ -1,6 +1,7 @@
+import "./AddActivity.css"
 import { useState } from "react"
 import { categories, durations } from "../../data/options"
-import "./AddActivity.css"
+import { addActivity } from "../../utils/activityStorage"
 
 export default function AddActivity() {
   const [title, setTitle] = useState("")
@@ -18,13 +19,7 @@ export default function AddActivity() {
       completed: false,
     }
 
-    const savedActivities =
-      JSON.parse(localStorage.getItem("activities")) || []
-
-    localStorage.setItem(
-      "activities",
-      JSON.stringify([...savedActivities, newActivity])
-    )
+    addActivity(newActivity)
 
     setTitle("")
 

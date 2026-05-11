@@ -1,15 +1,35 @@
 import { useEffect, useState } from "react"
+
+import ActivityCard from "../../components/ActivityCard/ActivityCard"
+
+import {
+  getActivities,
+  deleteActivity,
+  toggleActivityStatus,
+} from "../../utils/activityStorage"
+
 import "./Home.css"
 
 export default function Home() {
   const [activities, setActivities] = useState([])
 
-  useEffect(() => {
-    const savedActivities =
-      JSON.parse(localStorage.getItem("activities")) || []
+  const loadActivities = () => {
+    setActivities(getActivities())
+  }
 
-    setActivities(savedActivities)
+  useEffect(() => {
+    loadActivities()
   }, [])
+
+  const handleDelete = (id) => {
+    deleteActivity(id)
+    loadActivities()
+  }
+
+  const handleToggle = (id) => {
+    toggleActivityStatus(id)
+    loadActivities()
+  }
 
   return (
     <div className="home-page">
@@ -30,24 +50,12 @@ export default function Home() {
           </div>
         ) : (
           activities.map((activity) => (
-            <div
+            <ActivityCard
               key={activity.id}
-              className="card activity-card"
-            >
-              <div className="activity-header">
-                <h2 className="activity-title">
-                  {activity.title}
-                </h2>
-
-                <span className="activity-duration">
-                  {activity.duration}
-                </span>
-              </div>
-
-              <p className="activity-category">
-                {activity.category}
-              </p>
-            </div>
+              activity={activity}
+              onDelete={handleDelete}
+              onToggle={handleToggle}
+            />
           ))
         )}
       </div>
