@@ -1,0 +1,37 @@
+@reference "../../index.css";
+
+.roulette-page {
+  @apply max-w-4xl mx-auto p-6;
+}
+
+.roulette-header {
+  @apply text-center mb-8;
+}
+
+.roulette-title {
+  @apply text-4xl font-bold;
+}
+
+.roulette-subtitle {
+  @apply text-gray-600 mt-2;
+}
+
+.roulette-empty {
+  @apply p-10 text-center mt-8;
+}
+
+.roulette-options {
+  @apply grid grid-cols-2 md:grid-cols-3 gap-3 mt-8 mb-8;
+}
+
+.roulette-option {
+  @apply bg-white border border-[#ece7de] rounded-2xl p-4 transition;
+}
+
+.roulette-option:hover {
+  @apply -translate-y-1;
+}
+
+.roulette-option-title {
+  @apply font-medium text-sm;
+}
