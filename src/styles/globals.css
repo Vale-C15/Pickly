@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+.app-container {
+  @apply min-h-screen bg-[#f7f4ee];
+}
+
+.primary-button {
+  @apply w-full bg-[#2f5249] text-white py-3 rounded-xl transition hover:opacity-90;
+}
+
+.secondary-button {
+  @apply px-4 py-2 rounded-xl border border-[#d8d2c8] bg-white;
+}
+
+.input-field {
+  @apply w-full p-3 rounded-xl border border-gray-300 outline-none;
+}
+
+.select-field {
+  @apply w-full p-3 rounded-xl border border-gray-300 bg-white;
+}
+
+.card {
+  @apply bg-white rounded-3xl border border-[#ece7de];
+}
+
+.page-container {
+  @apply max-w-5xl mx-auto p-6;
+}

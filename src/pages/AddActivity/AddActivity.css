@@ -1,0 +1,21 @@
+@reference "../../index.css";
+
+.add-page {
+  @apply max-w-xl mx-auto p-6;
+}
+
+.add-title {
+  @apply text-3xl font-bold mb-6;
+}
+
+.add-form {
+  @apply p-6 space-y-5;
+}
+
+.form-group {
+  @apply flex flex-col;
+}
+
+.form-label {
+  @apply mb-2 font-medium;
+}
