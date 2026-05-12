@@ -1,0 +1,49 @@
+@reference "../../index.css";
+
+.roulette-page {
+  @apply max-w-4xl mx-auto p-6;
+}
+
+.roulette-header {
+  @apply text-center mb-8;
+}
+
+.roulette-title {
+  @apply text-4xl font-bold;
+}
+
+.roulette-subtitle {
+  @apply text-gray-600 mt-2;
+}
+
+.roulette-empty {
+  @apply p-10 text-center mt-8;
+}
+
+.roulette-options {
+  @apply flex flex-wrap gap-3 mt-8 mb-8;
+}
+
+.roulette-option {
+  @apply px-4 py-3 rounded-2xl
+  text-sm transition border;
+
+  border-color: transparent;
+}
+
+.roulette-option:hover {
+  transform: scale(1.04);
+}
+
+.roulette-option-title {
+  @apply font-medium text-sm;
+}
+
+.selected-option {
+  transform: scale(1.06);
+
+  border-color: #2f5249;
+
+  box-shadow:
+    0 8px 24px rgba(47, 82, 73, 0.15);
+}

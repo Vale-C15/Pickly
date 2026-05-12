@@ -29,7 +29,7 @@ export default function AddActivity() {
   return (
     <div className="add-page">
       <h1 className="add-title">
-        Nueva actividad
+        Qué quieres guardar para después?
       </h1>
 
       <form

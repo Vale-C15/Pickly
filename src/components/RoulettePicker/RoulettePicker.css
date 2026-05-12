@@ -1,0 +1,42 @@
+@reference "../../index.css";
+
+.roulette-container {
+  @apply flex flex-col gap-6;
+}
+
+.roulette-card {
+  @apply p-10 text-center;
+}
+
+.roulette-label {
+  @apply text-gray-500 mb-4;
+}
+
+.roulette-result {
+  @apply text-4xl font-bold;
+}
+
+.roulette-info {
+  @apply flex items-center justify-center gap-4 mt-6 text-sm text-gray-500;
+}
+
+.spinning {
+  animation: pulse 0.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.98);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+
+  100% {
+    opacity: 0.5;
+    transform: scale(0.98);
+  }
+}
