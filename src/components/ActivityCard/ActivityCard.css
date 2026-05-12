@@ -1,15 +1,25 @@
 @reference "../../index.css";
 
 .activity-card {
-  @apply p-5 flex flex-col gap-4;
+  @apply rounded-[28px]
+  p-5
+  min-h-[210px]
+  flex flex-col justify-between
+  transition cursor-pointer;
 }
 
-.activity-top {
-  @apply flex items-start justify-between gap-4;
+.activity-card:hover {
+  transform:
+    rotate(-1deg)
+    translateY(-4px);
+}
+
+.activity-emoji {
+  @apply text-3xl mb-4;
 }
 
 .activity-title {
-  @apply text-xl font-semibold;
+  @apply text-xl font-bold leading-tight;
 }
 
 .completed {
@@ -17,21 +27,40 @@
 }
 
 .activity-category {
-  @apply mt-1 text-gray-600;
+  @apply text-sm mt-2 opacity-70;
+}
+
+.activity-footer {
+  @apply flex items-end justify-between mt-6;
 }
 
 .activity-duration {
-  @apply text-sm text-gray-500;
+  @apply text-sm font-semibold;
 }
 
 .activity-actions {
-  @apply flex gap-3;
+  @apply flex items-center gap-2;
 }
 
 .complete-button {
-  @apply px-4 py-2 rounded-xl bg-[#2f5249] text-white;
+  @apply px-3 py-2 rounded-xl text-sm
+  transition;
+
+  background-color: rgba(255, 255, 255, 0.7);
+} 
+
+.complete-button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .delete-button {
-  @apply px-4 py-2 rounded-xl border border-red-200 text-red-500;
+  @apply w-10 h-10 rounded-xl text-sm
+  transition;
+
+  background-color: rgba(239, 68, 68, 0.12);
+  color: rgb(220, 38, 38);
+}
+
+.delete-button:hover {
+  background-color: rgba(239, 68, 68, 0.2);
 }

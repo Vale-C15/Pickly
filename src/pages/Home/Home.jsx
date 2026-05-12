@@ -50,6 +50,10 @@ export default function Home() {
 
   return (
     <div className="home-page">
+      <p className="home-greeting">
+        Qué te gustaría hacer hoy? ✨
+      </p>
+
       <h1 className="home-title">
         Pickly
       </h1>
@@ -69,7 +73,8 @@ export default function Home() {
         {filteredActivities.length === 0 ? (
           <div className="card empty-state">
             <p className="empty-text">
-              No hay actividades con esos filtros ✨
+              Tu lista está vacía ✨
+              Guarda ideas para esos momentos donde no sabes qué hacer.
             </p>
           </div>
         ) : (

@@ -4,12 +4,11 @@ import "./RoulettePicker.css"
 
 export default function RoulettePicker({
   activities,
+  selectedActivity,
+  setSelectedActivity,
 }) {
   const [isSpinning, setIsSpinning] =
     useState(false)
-
-  const [selectedActivity, setSelectedActivity] =
-    useState(null)
 
   const spinRoulette = () => {
     if (!activities.length || isSpinning) return
